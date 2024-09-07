@@ -1,0 +1,19 @@
+{
+  "name": "moomoogoldbot",
+  "version": "1.0.0",
+  "description": "Gold Bots for moomoo.iop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bianos",
+  "license": "ISC",
+  "dependencies": {
+    "google-recaptcha": "^1.1.0",
+    "grecaptcha": "^1.0.0",
+    "msgpack-lite": "^0.1.26",
+    "puppeteer": "^23.3.0",
+    "readline": "^1.3.0",
+    "ws": "^8.18.0"
+  }
+}
