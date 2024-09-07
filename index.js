@@ -4,7 +4,7 @@ let teams = [];
 let teammates = [];
 export class Bot {
     constructor(region, token) {
-        this.ws = new WebSocket(`wss://${region}/?token=re:${token}`);
+        this.ws = new ws(`wss://${region}/?token=re:${token}`);
         this.sid = undefined;
         this.x = undefined;
         this.y = undefined;
@@ -27,7 +27,7 @@ export class Bot {
             console.log('websocket true');
             this.ws.addEventListener('message', event => {
                 try {
-                    let decoded = Msgpack.decode(new Uint8Array(event.data));
+                    let decoded = msgpack.decode(new Uint8Array(event.data));
                     let hooked;
                     if (decoded.length > 1 && Array.isArray(decoded[1])) {
                         hooked = [decoded[0], ...decoded[1]];
@@ -117,9 +117,9 @@ export class Bot {
     }
 
     async sendMessage(type, ...args) {
-        if (this.ws.readyState === WebSocket.OPEN && this.packetCount < 120) {
+        if (this.ws.readyState === ws.OPEN && this.packetCount < 120) {
             let message = [type, args];
-            let eM = Msgpack.encode(message);
+            let eM = msgpack.encode(message);
             let mes = new Uint8Array(eM);
             this.ws.send(mes);
             this.packetCount++;
