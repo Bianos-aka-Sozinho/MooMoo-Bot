@@ -1,5 +1,5 @@
-let msgpack = require('msgpack-lite')
-let ws = require('ws')
+import msgpack from 'msgpack-lite';
+import ws from 'ws';
 let teams = [];
 let teammates = [];
 class Bot {
