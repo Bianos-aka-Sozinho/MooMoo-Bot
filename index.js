@@ -1,6 +1,4 @@
-import decode from "./msgpack/decode.js";
-import encode from "./msgpack/encode.js";
-import msgpack from "./msgpack"
+import msgpack from "msgpack-lite"
 import ws from 'ws';
 let teams = [];
 let teammates = [];
