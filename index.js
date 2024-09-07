@@ -2,7 +2,7 @@ import msgpack from 'msgpack-lite';
 import ws from 'ws';
 let teams = [];
 let teammates = [];
-export class botManager {
+export class Bot {
     constructor(region, token) {
         this.ws = new ws(`wss://${region}/?token=re:${token}`);
         this.sid = undefined;
